@@ -234,19 +234,3 @@ single track or `--album` for a release.
 ## Time format
 
 Times can be typed as `4`, `4.5`, `17:54`, `00:17:54` or `00:17:54.320`.
-
-## Suggested orders
-
-- **Noisy recording:** extract, declip, declick (start at 15), denoise
-  (6 to 10 dB), normalize.
-- **Glitch chain:** slice-shuffle, then stutter, then dropout.
-- **Always:** run `declip` before `gain-crush`, never after.
-
-## Good to know
-
-- Edits run on the whole file in memory, so very long files with heavy
-  edits (`stretch`, `granular`) can take a while.
-- Peaks above full scale are clipped when a file is saved. Use `normalize`
-  or `ceiling-clip` before heavy gain changes.
-- The script has not been run end to end. Check it with
-  `python3 -m py_compile audioedit` and report anything that fails.
